@@ -8,6 +8,10 @@ function largestNumber(arr){
         return 'Array is empty'
     }
     
+    if(arr.every(element => element === arr[0])){
+        return 'all elements are the same'
+    }
+    
     let max_num = arr[0];
     
     for(let i=1;i<arr.length;i++){
@@ -19,7 +23,8 @@ function largestNumber(arr){
     return max_num;
 }
 
-const arr = [2, 4, 5, 6, 8, 8, 10,10];
+// const arr = [2, 4, 5, 6, 8, 8, 10,10];
+const arr = [3,3,3,3];
 
 const bigno = largestNumber(arr);
 console.log(bigno);

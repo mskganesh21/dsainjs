@@ -37,6 +37,16 @@ class Stack{
   size(){
     return this.stack.length;
   }
+  
+  print(){
+  if(this.isEmpty()){
+    console.log("Stack is empty");
+  } else {
+    for(let i = 0; i < this.stack.length; i++){
+      console.log(this.stack[i]);
+    }
+  }
+  }
 }
 
 const stack = new Stack();
@@ -51,3 +61,4 @@ stack.pop()
 console.log(stack.peek())
 console.log(stack.isEmpty())
 console.log(stack.size())
+stack.print();

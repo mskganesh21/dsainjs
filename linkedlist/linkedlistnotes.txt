@@ -1,0 +1,28 @@
+linear data structure
+collection of nodes
+node is a collection of data and address of next node
+dynamic data structure
+can grow or shrink during run time and saves memory
+insertion or deletion is easy because no shift is needed
+
+types
+singly ll
+doubly ll
+circular ll
+circular doubly ll
+
+node
+class node
+data 
+next 
+
+class Node{
+constructor(data, next= null){
+this.data = data;
+this.next = next;
+}
+}
+
+class SinglyLinkedlist{
+
+}

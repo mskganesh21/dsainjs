@@ -73,3 +73,28 @@ const depthFirstValues = (root) => {
 
 const results = depthFirstValues(a);
 console.log(results)
+
+
+
+const depthFirstSearch =(root) => {
+  if(root === null){
+    return []
+  }
+  
+  const leftvalues = depthFirstSearch(root.left);  //b,d,e
+  const rightvalues = depthFirstSearch(root.right);  //c,,f
+  
+  return [root.value, ...leftvalues, ...rightvalues]
+}
+
+const result3 = depthFirstSearch(a);
+console.log(result3)
+
+
+
+
+
+
+
+
+

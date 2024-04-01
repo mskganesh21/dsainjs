@@ -26,10 +26,10 @@ class Node{
 }
 
 
-const a = new Node('A');
-const b = new Node('B');
-const c = new Node('C');
-const d = new Node('D');
+const a = new Node(2);
+const b = new Node(8);
+const c = new Node(3);
+const d = new Node(7);
 
 
 a.next = b;
@@ -78,6 +78,73 @@ const fillValues = (head,values) => {
 console.log(linkedListValues(a));
 
 
+const sumofNodes = (head) => {
+  let sum = 0;
+  let current = head;
+  while(current){
+    sum += current.val;
+    current = current.next
+  }
+  return sum;
+}
+
+console.log(sumofNodes(a))
+
+const sumofNodesRecursively = (head) => {
+  if(!head) return 0;
+  return head.val + sumofNodesRecursively(head.next);
+}
+
+console.log(sumofNodesRecursively(a))
 
 
+/*
+LINKED LIST FIND PROBLEM
+*/
 
+const findNode = (head,target) => {
+  let current = head;
+  while(current){
+    if(current.val === target) return true;
+    current = current.next
+  }
+  
+  return false
+}
+
+
+console.log(findNode(a,7))
+
+
+const findNodeRecursively = (head,target) => {
+  if(!head) return false;
+  if(head.val === target) return true;
+  
+  return findNodeRecursively(head.next,target);
+}
+
+console.log(findNodeRecursively(a,7))
+
+
+const findNodeAtIndex = (head,index) => {
+  let count = 0;
+  let current = head;
+  
+  while(current){
+    if(count === index ) return current.val;
+    current = current.next;
+    count += 1;
+  }
+  return null
+}
+
+console.log(findNodeAtIndex(a,0));
+
+
+const findNodeAtIndexRecursively = (head,index) => {
+  if(!head) return null;
+  if(index === 0) return head.val;
+  return findNodeAtIndexRecursively(head.next,index -1);
+}
+
+console.log(findNodeAtIndexRecursively(a,3))

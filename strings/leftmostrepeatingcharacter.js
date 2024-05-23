@@ -44,3 +44,26 @@ const LeftMostRepeatingCharacter = (str) => {
 
 const result = LeftMostRepeatingCharacter("abcd");
 console.log(result);
+
+
+/*
+Efficient approach
+*/
+
+const LeftMostRepeatingCharacter = (str) => {
+  let n = str.length;
+  let visited = new Array(256).fill(false);
+  let res = -1;
+  for(let i=n-1;i>=0;i--){
+    if(visited[str.charCodeAt(i)]){
+    res = str.charAt(i);
+  }
+  
+  visited[str.charCodeAt(i)] = true;
+  }
+  
+  return res;
+}
+
+const result = LeftMostRepeatingCharacter("aabcbcd");
+console.log(result);

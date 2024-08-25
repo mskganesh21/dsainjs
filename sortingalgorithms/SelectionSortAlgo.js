@@ -13,6 +13,8 @@ and so on........
 
 if there are 5 elements then there will be 4 steps and so on..
 
+TC : O(n*(n+1) / 2) which is approx O(n^2)
+
 */
 
 

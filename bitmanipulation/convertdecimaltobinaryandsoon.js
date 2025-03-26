@@ -27,3 +27,21 @@ const convertBinaryToDecimal = (str) => {
 
 const result2 = convertBinaryToDecimal(1101);
 console.log(result2);
+
+
+
+
+const decimalToBinary = (n) => {
+    let res = "";
+  
+    while (n > 0) {
+        let rem = n % 2; // Get remainder
+        res += rem; // Append remainder to result
+        n = Math.floor(n / 2); // Update n to be the quotient
+    }
+  
+    return res.split('').reverse().join(''); // Reverse and join to get binary representation
+}
+
+const result = decimalToBinary(13);
+console.log(result); // Output: "1101"
